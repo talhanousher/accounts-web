@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Redirect, Switch } from "react-router-dom";
 import './App.css';
+const Main = React.lazy(() => import('./Main'));
+// import Main from './Main';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: '100%', height: '100vh' }}>
+      <Router>
+        <Switch>
+          <React.Suspense fallback={<div>Fallback</div>}>
+          <Main />
+          </React.Suspense>
+          <Redirect exact from={"/"} to={"/general/entries"} />
+        </Switch>
+      </Router>
     </div>
   );
 }
