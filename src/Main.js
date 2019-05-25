@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { Layout, Menu, Icon } from 'antd';
 import './App.css';
-const GeneralEntries = React.lazy(() => import('./Components/GeneralEntriesComponent'));
+const GeneralEntries = React.lazy(() => import('./Components/generalEntriesComponent'));
 const TAccounts = React.lazy(() => import('./Components/TAccountsComponent'));
 const TrialBalance = React.lazy(() => import('./Components/TrialBalanceComponent'));
 const { Header, Sider, Content } = Layout;
