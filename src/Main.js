@@ -29,6 +29,18 @@ class Main extends React.Component {
     };
 
     render() {
+        let defaultSelected = '';
+        if(window.location.pathname === '/general/entries'){
+            defaultSelected = '1';
+        }else{
+            if(window.location.pathname === '/t/accounts'){
+                defaultSelected = '2';
+            }else{
+                if(window.location.pathname === '/trial/balance'){
+                    defaultSelected = '3';
+                }
+            }
+        }
         return (
             <Layout style={{ height: '100%' }}>
                 <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
@@ -36,7 +48,7 @@ class Main extends React.Component {
                         height: '85px',
                         color: 'white',
                         width: '70%',
-                        margin: '0 auto',
+                           margin: '0 auto',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -44,7 +56,7 @@ class Main extends React.Component {
                         fontFamily: 'sans-serif',
                         letterSpacing: '5px'
                     }} >{this.state.title}</div>
-                    <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+                    <Menu theme="dark" mode="inline" defaultSelectedKeys={[defaultSelected]}>
                         <Menu.Item key="1">
                             <Link to="/general/entries">
                                 <Icon type="schedule" />

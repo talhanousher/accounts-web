@@ -8,7 +8,7 @@ function App() {
     <div style={{ width: '100%', height: '100vh' }}>
       <Router>
         <Switch>
-          <React.Suspense fallback={<div>Fallback</div>}>
+          <React.Suspense fallback={<div>Loading....</div>}>
             <Main />
           </React.Suspense>
           <Redirect exact from={"/"} to={"/general/entries"} />

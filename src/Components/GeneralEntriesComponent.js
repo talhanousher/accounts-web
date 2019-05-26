@@ -18,6 +18,11 @@ const columns = [
         title: 'Credit',
         key: 'credit',
         dataIndex: 'credit',
+    },
+    {
+        title: 'Type',
+        key: 'type',
+        dataIndex: 'type',
     }
 ];
 
