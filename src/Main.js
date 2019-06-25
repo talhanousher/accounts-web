@@ -5,6 +5,7 @@ import './App.css';
 const GeneralEntries = React.lazy(() => import('./Components/generalEntriesComponent'));
 const TAccounts = React.lazy(() => import('./Components/TAccountsComponent'));
 const TrialBalance = React.lazy(() => import('./Components/TrialBalanceComponent'));
+const IncomeStatement = React.lazy(()=>import('./Components/IncomeStatementComponent'));
 const { Header, Sider, Content } = Layout;
 
 class Main extends React.Component {
@@ -75,6 +76,12 @@ class Main extends React.Component {
                                 <span>Trial Balance</span>
                             </Link>
                         </Menu.Item>
+                        <Menu.Item key="4">
+                            <Link to="/income/statement">
+                                <Icon type="fund" />
+                                <span>Income Statement</span>
+                            </Link>
+                        </Menu.Item>
                     </Menu>
                 </Sider>
                 <Layout>
@@ -95,6 +102,7 @@ class Main extends React.Component {
                             <Route path="/general/entries" component={GeneralEntries} />
                             <Route path="/t/accounts" component={TAccounts} />
                             <Route path="/trial/balance" component={TrialBalance} />
+                            <Route path="/income/statement" component={IncomeStatement}/>
                         </React.Suspense>
                     </Content>
                 </Layout>
